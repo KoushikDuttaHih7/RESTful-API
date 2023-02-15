@@ -10,6 +10,6 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use("/api/v1", require("./routes/productRoute"));
+app.use("/api/product", require("./routes/productRoute"));
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
