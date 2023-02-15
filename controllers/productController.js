@@ -12,6 +12,11 @@ const viewProducts = async (req, res) => {
 
 const updateProduct = async (req, res) => {
   let product = await Product.findById(req.params.id);
+
+  if (!product) {
+    return res.json({ success: false, message: "No product found" });
+  }
+
   product = await Product.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
   });
