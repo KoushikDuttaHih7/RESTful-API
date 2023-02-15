@@ -1,0 +1,17 @@
+{
+  "name": "restful-api",
+  "version": "1.0.0",
+  "description": "Build a RESTful API: A One-Stop Tutorial for CRUD Operations - From Start to Finish",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "server.js"
+  },
+  "author": "Koushik Dutta",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.9.1"
+  }
+}
