@@ -2,7 +2,15 @@ const Product = require("../models/productModel");
 
 const addProduct = async (req, res) => {
   const product = await Product.create(req.body);
-  res.statusCode(200).json({ success: true, product });
+  res.json({ success: true, product });
 };
 
-module.exports = addProduct;
+const viewProducts = async (req, res) => {
+  const products = await Product.find();
+  res.json({ success: true, products });
+};
+
+module.exports = {
+  viewProducts,
+  addProduct,
+};
