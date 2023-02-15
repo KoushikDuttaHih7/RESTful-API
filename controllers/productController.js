@@ -10,7 +10,16 @@ const viewProducts = async (req, res) => {
   res.json({ success: true, products });
 };
 
+const updateProduct = async (req, res) => {
+  let product = await Product.findById(req.params.id);
+  product = await Product.findByIdAndUpdate(req.params.id, req.body, {
+    new: true,
+  });
+  res.json({ success: true, product });
+};
+
 module.exports = {
   viewProducts,
   addProduct,
+  updateProduct,
 };
