@@ -1,8 +1,11 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const dotenv = require("dotenv").config();
+const connectDB = require("./config/db");
+const port = process.env.PORT;
 
+connectDB();
 const app = express();
-const port = 5000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
